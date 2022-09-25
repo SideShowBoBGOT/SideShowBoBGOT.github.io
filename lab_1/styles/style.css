@@ -7,7 +7,7 @@ html {
     height: 100vh;
     width: 100vw;
 }
-.main .header-footer {
+.main .block-1 {
     display: flex;
     background-color: #290e45;
     border-top-left-radius: 15px;
@@ -16,28 +16,28 @@ html {
     height: 30px;
     align-items: center;
 }
-.main .header-footer .menu {
+.main .block-1 .menu {
     width: 400px;
 }
-.main .header-footer .menu ul {
+.main .block-1 .menu ul {
     margin-top: auto;
     margin-bottom: auto;
     list-style: none;
     display: flex;
 }
 
-.main .header-footer .menu ul li {
+.main .block-1 .menu ul li {
     flex-grow: 1;
     flex-shrink: 1;
 }
-.main .header-footer .menu ul li a {
+.main .block-1 .menu ul li a {
     text-decoration: none;
     color: aliceblue;
 }
-.main .header-footer .menu ul li a:hover {
+.main .block-1 .menu ul li a:hover {
     color: grey;
 }
-.main .header-footer .motto {
+.main .block-1 .motto {
     color: aliceblue;
     height: 80%;
     margin-right: 50px;
@@ -46,10 +46,10 @@ html {
     text-align: center;
     margin-left: auto;
 }
-.main .header-footer .motto .name {
+.main .block-1 .motto .name {
     margin-top: 2px;
 }
-.main .header-footer .motto i {
+.main .block-1 .motto i {
     font-size: 25px;
     margin-bottom: 2px;
 }
