@@ -197,6 +197,9 @@ html {
     display: flex;
     list-style: none;
 }
+.main .block-7 .socials a{
+    color: aliceblue;
+}
 .main .block-7 .socials a:hover{
     color: grey;
 }
