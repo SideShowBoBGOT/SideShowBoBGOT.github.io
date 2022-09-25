@@ -1,0 +1,38 @@
+html {
+    background-color: #3c1166;
+    color: white;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.main >*{
+    margin-left: 30px;
+}
+.main .full_name {
+    font-size: 30px;
+}
+.main .labs {
+    display: flex;
+    gap: 1.5rem;
+}
+.main .labs .lab {
+    display: flex;
+    flex-direction: column;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #cdd2d9;
+    border-bottom: 3px solid transparent;
+    transition: 300ms;
+
+}
+a:hover {
+    color: white;
+    border-bottom-color: #cdd2d9;
+    transition: 300ms;
+}
