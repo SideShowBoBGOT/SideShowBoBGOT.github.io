@@ -1,0 +1,20 @@
+.html {
+    font-family: Calibri, sans-serif;
+}
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.topic {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-left: 4rem;
+    font-size: 25px;
+}
+.topic-text {
+    padding-top: 4px;
+    padding-left: 4px;
+    font-size: 20px;
+}
