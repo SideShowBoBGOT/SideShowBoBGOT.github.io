@@ -1,0 +1,62 @@
+.header-footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #3e3c40;
+    border: 3px solid #938d97;
+    color: aliceblue;
+}
+.header-footer .menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    grid-column: span 2;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(6, min-content);
+}
+.header-footer .tab a {
+    border: 3px solid transparent;
+    color: aliceblue;
+    transition: 100ms;
+}
+.header-footer .tab a:hover {
+    border-bottom-color: #cdd2d9;
+    transition: 100ms;
+}
+.header-footer .motto {
+    grid-column: 3;
+}
+.header-footer.block-1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.header-footer.block-7 {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .header-footer .motto {
+        font-size: 20px;
+    }
+    .header-footer {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .header-footer .menu {
+        gap: 0.1rem;
+        font-size: 20px;
+        grid-template-columns: repeat(3, min-content);
+    }
+}
+@media only screen and (max-width: 400px) {
+    .header-footer .motto {
+        font-size: 17px;
+    }
+}
+
+
