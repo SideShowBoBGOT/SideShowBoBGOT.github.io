@@ -72,6 +72,19 @@
 .tpc .bottom a{
     font-family: Calibri;
     color: aliceblue;
+    text-decoration: none;
+    border: 3px solid transparent;
+    border-bottom-color: aliceblue;
+    transition: 0.5s ease-in-out;
+}
+.tpc .bottom a:hover{
+    border: 3px solid aliceblue;
+    border-color: aliceblue;
+}
+
+
+.tpc .bottom a:hover {
+
 }
 
 @media only screen and (max-width: 1040px) {
