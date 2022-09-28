@@ -1,0 +1,17 @@
+.footer {
+    background-color: #333333;
+    display: grid;
+    min-height: 100px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.sample {
+    font-family: Calibri;
+    color: aliceblue;
+
+    max-width: 430px;
+    height: min-content;
+    text-align: center;
+}

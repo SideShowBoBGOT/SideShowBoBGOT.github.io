@@ -1,0 +1,119 @@
+.content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr auto;
+}
+
+.presention {
+    margin-left: 20px;
+    background-image: linear-gradient(to right,
+    transparent 15%,
+    #33bab4 12px,
+    #33bab4 85%,
+    transparent 15%);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.datavis-topic {
+    margin-top: 60px;
+    color: aliceblue;
+    font-size: 75px;
+    font-family: maven;
+}
+
+.datavis-img img{
+    width: 100%;
+}
+
+.topics {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    // background-color: #3c1166;
+    margin-top: 120px;
+    margin-right: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 6rem;
+}
+
+.tpc {
+    height: min-content;
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content auto;
+}
+
+.tpc .top {
+    font-family: maven;
+    color: #b5b8ed;
+    font-size: 25px;
+    margin-left: min(20%, 40px);
+}
+
+.tpc .middle {
+    font-family: Calibri;
+    margin-top: 12px;
+    color: aliceblue;
+    margin-left: min(30%, 60px);
+    font-size: 20px;
+}
+
+.tpc .bottom {
+    height: min-content;
+    margin-top: 5px;
+    font-size: 22px;
+    margin-left: min(30%, 60px);
+}
+.tpc .bottom a{
+    font-family: Calibri;
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 1040px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .presention {
+        margin-left: 20px;
+        gap: 0.5rem;
+        background-image: linear-gradient(to right,
+        transparent 30%,
+        #33bab4 12px,
+        #33bab4 70%,
+        transparent 30%);
+    }
+
+    .datavis-topic {
+        margin-top: 5px;
+        font-size: 30px;
+    }
+
+    .datavis-img img{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .topics {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    // background-color: #3c1166;
+        padding: 3rem;
+        margin-right: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-template-rows: auto;
+    }
+    .tpc {
+        max-width: 500px;
+    }
+
+}

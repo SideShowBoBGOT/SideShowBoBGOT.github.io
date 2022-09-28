@@ -1,0 +1,60 @@
+@font-face {
+    font-family: maven;
+    src: url("InterTight-Bold.ttf");
+}
+
+.header {
+    // background-color: red;
+    display: flex;
+}
+
+.logo {
+    margin-top: 5px;
+    color: aliceblue;
+    font-family: maven;
+    font-size: 24px;
+}
+
+.ogol {
+    margin-left: auto;
+    // background-color: #4c4c54;
+    display: flex;
+    gap: 1.5rem;
+}
+.menu {
+    padding-top: 6px;
+    color: aliceblue;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: min-content;
+    font-size: 30px;
+    transition: transform .6s ease-in-out;
+}
+.menu:hover {
+    color: white;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.socials {
+    padding-left: 0;
+    padding-top: 10px;
+    margin: 0;
+    justify-self: flex-end;
+    gap: 0.6rem;
+    list-style: none;
+    display: flex;
+    padding-bottom: 4px;
+}
+
+.socials .soc img{
+    width: 22px;
+    height: 22px;
+}
+
+@media only screen and (max-width: 1040px) {
+    .menu {
+        position: absolute;
+        left: calc(50% - 5px);
+    }
+}
