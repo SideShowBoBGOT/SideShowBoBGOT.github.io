@@ -18,5 +18,10 @@ html, body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+}
 
+@media only screen and (max-width: 800px) {
+    .centered {
+        width: 90%;
+    }
 }
