@@ -1,0 +1,31 @@
+html {
+
+}
+a {
+    text-decoration: none;
+}
+html, body {
+    background-color: #140d1d;
+    color: white;
+    height: 100%;
+}
+.main {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+textarea {
+    padding: 0;
+    height: 400px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .main {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr auto;
+    }
+}

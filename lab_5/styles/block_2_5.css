@@ -1,0 +1,40 @@
+.block-2-5 {
+    display: grid;
+    grid-row: 1 / span 2;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    border-left: 3px solid #938d97;
+    width: 322px;
+    background-color: #4c4c54;
+}
+.block-5 {
+    text-align: right;
+}
+.block-2-5 > *{
+    padding-top: 0.2rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+}
+.block-2-5 .block-2 {
+    border-bottom: 3px solid #938d97;
+}
+.block-5 .genres {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.block-5 .genres .gen  a {
+    color: #cdd2d9;
+}
+.block-5 .genres .gen  a:hover{
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 1000px) {
+    .block-2-5 {
+        font-size: 22px;
+        grid-row: 1;
+    }
+}
