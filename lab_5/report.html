@@ -4,36 +4,411 @@
     <meta charset="UTF-8">
   <link rel="stylesheet" href="../report.css">
   <link rel="stylesheet" href="style.css">
-    <title>Лабораторна 2</title>
+    <title>Лабораторна 5</title>
 </head>
 <body>
 <div class="main">
   <div class="header">
-    <h1>Лабораторна 3</h1>
+    <h1>Лабораторна 5</h1>
     <h2>Панченко Сергій ІП-11</h2>
     <h2>7 Варіант</h2>
   </div>
   <div class="topic"><b>Мета:</b>
     <div class="topic-text">
-      Освоєння верстки поштової та мобільної версії веб-сторінки, виявлення
-      особливостей функціонування веб-сторінок для мобільних пристроїв та
-      поштових програм.
+      Ознайомлення із скриптовою мовою програмування Javascript на прикладі
+      роботи із веб-сторінкою
     </div>
   </div>
-  <div class="content">
-    <h2>Ноутбук</h2>
-    <img src="img/Знімок%20екрана%20(11).png" alt="" width="900" height="600" >
-    <h2>Звужена сторінка</h2>
-    <img src="img/Знімок%20екрана%20(12).png" alt="" width="900" height="600">
-    <h2>Телефон</h2>
-    <img src="img/photo_2022-09-26_23-01-41.jpg" alt="" width="230" height="500">
-    <h2>Пошта</h2>
+  <div class="content" style="font-size: 25px">
 
+    Перерахую, що треба було зробити, та перерахую зміни з відповідними скриншотами
+  <ol class="exercises" style="font-size: 30px">
+    <li>
+      Поміняйте місцями контент блоків «4» та «5»:
+      <div class="beforeafter">
+        <div class="before">
+          <div style="font-weight: bold; font-size: 25px">До</div>
+          <img src="img/Screenshot%202022-10-01%20215806.png" alt="" width="700px">
+        </div>
+        <div class="After">
+          <div style="font-weight: bold; font-size: 25px">Після</div>
+          <img src="img/Screenshot%202022-10-01%20220040.png" alt="" width="700px">
+        </div>
+        <code class="code">
+          <div style="font-weight: bold; font-size: 25px">Код</div>
+          block4 = document.querySelector(".block-4");
+          block5 = document.querySelector(".block-5");
+          block4_content = block4.innerHTML;
+          block4.innerHTML = block5.innerHTML;
+          block5.innerHTML = block4_content;
+        </code>
+      </div>
+
+    </li>
+    <li>
+      Напишіть функцію, яка обчислює площу овала,
+      беручи необхідні значення із відповідних змінних у
+      скрипті, і виводить отриманий результат в кінці
+      контенту в блоці «3».
+      <img src="img/Screenshot%202022-10-01%20222353.png" alt="">
+        <code class="code">
+          <div style="font-weight: bold; font-size: 25px">Код</div>
+          circle = document.getElementsByClassName("circle")[0];
+          circle.innerHTML = "AREA : " + 3.14*(4*4);
+        </code>
+    </li>
+    <li>
+      <div>
+      Напишіть скрипт, який визначає кількість слів у
+      тексті, де слова розділяються пробілом, беручи
+      текст із відповідної форми в блоці «3», а отриманий
+      результат виводить за допомогою діалогового вікна
+      і зберігає в cookies, причому:
+      а) при оновленні веб-сторінки в броузері користувачу за допомогою
+      діалогового вікна виводиться інформація, збережена в cookies, із питанням про
+      необхідність видалити дані із cookies, і не виводиться згадана вище форма;
+      б) при підтвердженні питання відповідні cookies видаляються, і веб-сторінка
+      оновлюється з початковим станом із наявною формою для введення даних;
+      в) при відмові виводиться наступне діалогове вікно із інформуванням
+      користувача про наявність cookies і потребу перезавантажити веб-сторінку.
+      </div>
+      <img src="img/delcoocies.png" alt="">
+      <br>
+      <img src="img/Screenshot%202022-10-01%20222752.png" alt="">
+      <br>
+      <img src="img/length.png" alt="">
+      <code class="code">
+        <div style="font-weight: bold; font-size: 25px">Код</div>
+        function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+        }
+        return "";
+        }
+        function delete_cookie(name) {
+        if( getCookie( name ) ) {
+        document.cookie = name + "=" +
+        "; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+        }
+        }
+
+        block3 = document.getElementsByClassName("block-3")[0];
+        button_length = document.getElementById("save_length");
+        let text_area = document.getElementById("text");
+        button_length.onclick = function () {
+        len = 0;
+        text = text_area.value;
+        if(text) {
+        words = text.split(" ");
+        words = words.filter((value, index, arr) => value!=="");
+        len = words.length;
+        }
+        document.cookie = "text_length="  + len;
+        alert("Text Length: " + len);
+        console.log(document.cookie);
+        }
+
+        if(!getCookie("iscookie")) {
+        choice = confirm("Delete cookies?");
+        if(choice) {
+        delete_cookie("text_length");
+        } else {
+        alert("Cookies exists. The site will be reloaded");
+        }
+        location.reload();
+        document.cookie = "iscookie=true;";
+        console.log(document.cookie);
+        } else {
+        delete_cookie("iscookie");
+        console.log(document.cookie);
+        }
+      </code>
+    </li>
+    <li>
+      Напишіть скрипт, який при настанні події dblclick задає вирівнювання по лівому
+      краю вмісту блоків «3», «4», «5» при встановленні користувачем відповідних
+      галочок у формі і зберігає відповідні значення в localStorage броузера так, щоб
+      при наступному відкриванні документа властивості вирівнювання по лівому
+      краю вмісту блоків «3», «4», «5» встановлювались із збережених значень в
+      localStorage.
+      <img src="img/Screenshot%202022-10-01%20230818.png" alt="">
+      <br>
+      <img src="img/Screenshot%202022-10-01%20230843.png" alt="">
+      <code class="code">
+        <div style="font-weight: bold; font-size: 25px">Код</div>
+        bl3 = document.getElementById("bl3");
+        bl4 = document.getElementById("bl4");
+        bl5 = document.getElementById("bl5");
+        block3 = document.getElementsByClassName("block-3")[0];
+        block4 = document.getElementsByClassName("block-4")[0];
+        block5 = document.getElementsByClassName("block-5")[0];
+
+        bl3.addEventListener("change", (event) => {
+        const data = { check: bl3.checked };
+        window.localStorage.setItem('bl3', JSON.stringify(data));
+        console.log("bl3: "+bl3.checked);
+        });
+
+        bl4.addEventListener("change", (event) => {
+        const data = { check: bl4.checked };
+        window.localStorage.setItem('bl4', JSON.stringify(data));
+        console.log("bl4: "+bl4.checked);
+        });
+
+        bl5.addEventListener("change", (event) => {
+        const data = { check: bl5.checked };
+        window.localStorage.setItem('bl5', JSON.stringify(data));
+        console.log("bl5: "+bl5.checked);
+        });
+
+
+        function alignleft() {
+        bl3_storage = JSON.parse(window.localStorage.getItem('bl3'));
+        bl4_storage = JSON.parse(window.localStorage.getItem('bl4'));
+        bl5_storage = JSON.parse(window.localStorage.getItem('bl5'));
+        if(bl3_storage!==null) {
+        bl3.checked = bl3_storage.check;
+        }
+        if(bl4_storage!==null) {
+        bl4.checked = bl4_storage.check;
+        }
+        if(bl5_storage!==null) {
+        bl5.checked = bl5_storage.check;
+        }
+
+        if(bl3.checked) {
+        block3.style.textAlign = "left";
+        } else {
+        block3.style.textAlign = "right";
+        }
+        if(bl4.checked) {
+        block4.style.textAlign = "left";
+        } else {
+        block4.style.textAlign = "right";
+        }
+        if(bl5.checked) {
+        block5.style.textAlign = "left";
+        } else {
+        block5.style.textAlign = "right";
+        }
+        }
+        alignleft();
+        document.ondblclick = function () {
+        alignleft();
+        }
+      </code>
+    </li>
+    <li>
+      Напишіть скрипт редагування вмісту (текст і HTML) номерних блоків (1..7):
+      а) необхідні елементи форми появляються у відповідних номерних блоках
+      внаслідок події select на елементі нумерованого списку в блоці «3» (додайте
+      такий список у блок «3» в кінці його вмісту);
+      б) у текстове поле підставляється весь вміст номерного блока (текст і HTML);
+      в) після текстового поля розміщується кнопка, внаслідок натискання на яку
+      змінений вміст зберігається в localStorage і заміщує початковий вміст
+      номерного блока, при цьому весь текст блока відображається курсивом;
+      г) під кожним новим вмістом редагованих номерних блоків розміщується
+      кнопка, внаслідок натискання на яку новий вміст видаляється із localStorage
+      броузера і в номерний блок підставляється початковий вміст відповідного
+      номерного блоку без перезавантаження веб-сторінки.
+      <img src="img/Screenshot%202022-10-01%20231211.png" alt="">
+      <code class="code">
+        <div style="font-weight: bold; font-size: 25px">Код</div>
+        let selected_block = undefined;
+        function declare() {
+        save_change_btn = document.getElementById("save_change");
+        cancel_change_btn = document.getElementById("cancel_change");
+        text_area = document.getElementById("text");
+        block1_change_btn = document.getElementById("block1_change");
+        block2_change_btn = document.getElementById("block2_change");
+        block3_change_btn = document.getElementById("block3_change");
+        block4_change_btn = document.getElementById("block4_change");
+        block5_change_btn = document.getElementById("block5_change");
+        block6_change_btn = document.getElementById("block6_change");
+        block7_change_btn = document.getElementById("block7_change");
+
+        block1 = document.getElementsByClassName("block-1")[0];
+        block2 = document.getElementsByClassName("block-2")[0];
+        block3 = document.getElementsByClassName("block-3")[0];
+        block4 = document.getElementsByClassName("block-4")[0];
+        block5 = document.getElementsByClassName("block-5")[0];
+        block6 = document.getElementsByClassName("block-6")[0];
+        block7 = document.getElementsByClassName("block-7")[0];
+
+        block1_html = block1.innerHTML;
+        block2_html = block2.innerHTML;
+        block3_html = block3.innerHTML;
+        block4_html = block4.innerHTML;
+        block5_html = block5.innerHTML;
+        block6_html = block6.innerHTML;
+        block7_html = block7.innerHTML;
+
+        block1_back = document.createElement("button");
+        block2_back = document.createElement("button");
+        block3_back = document.createElement("button");
+        block4_back = document.createElement("button");
+        block5_back = document.createElement("button");
+        block6_back = document.createElement("button");
+        block7_back = document.createElement("button");
+
+        block1_back.innerText = "Block 1 Back";
+        block2_back.innerText = "Block 2 Back";
+        block3_back.innerText = "Block 3 Back";
+        block4_back.innerText = "Block 4 Back";
+        block5_back.innerText = "Block 5 Back";
+        block6_back.innerText = "Block 6 Back";
+        block7_back.innerText = "Block 7 Back";
+
+        block1_back.onclick = () => {
+        block1.innerHTML = JSON.parse(window.localStorage.getItem("block1_html")).html;
+        block1.style.fontStyle = "normal";
+        }
+        block2_back.onclick = () => {
+        block2.innerHTML = JSON.parse(window.localStorage.getItem("block2_html")).html;
+        block2.style.fontStyle = "normal";
+
+        }
+        block3_back.onclick = () => {
+        block3.innerHTML = JSON.parse(window.localStorage.getItem("block3_html")).html;
+        block3.style.fontStyle = "normal";
+
+        declare();
+        }
+        block4_back.onclick = () => {
+        block4.innerHTML = JSON.parse(window.localStorage.getItem("block4_html")).html;
+        block4.style.fontStyle = "normal";
+
+        }
+        block5_back.onclick = () => {
+        block5.innerHTML = JSON.parse(window.localStorage.getItem("block5_html")).html;
+        block5.style.fontStyle = "normal";
+        }
+        block6_back.onclick = () => {
+        block6.innerHTML = JSON.parse(window.localStorage.getItem("block6_html")).html;
+        block6.style.fontStyle = "normal";
+
+        }
+        block7_back.onclick = () => {
+        block7.innerHTML = JSON.parse(window.localStorage.getItem("block7_html")).html;
+        block7.style.fontStyle = "normal";
+        }
+        // change buttons
+        block1_change_btn.onclick = () => {
+        selected_block = block1;
+        text_area.value = block1.innerHTML;
+        }
+        block2_change_btn.onclick = () => {
+        selected_block = block2;
+        text_area.value = block2.innerHTML;
+        }
+        block3_change_btn.onclick = () => {
+        selected_block = block3;
+        text_area.value = block3.innerHTML;
+        }
+        block4_change_btn.onclick = () => {
+        selected_block = block4;
+        text_area.value = block4.innerHTML;
+        }
+        block5_change_btn.onclick = () => {
+        selected_block = block5;
+        text_area.value = block5.innerHTML;
+        }
+        block6_change_btn.onclick = () => {
+        selected_block = block6;
+        text_area.value = block6.innerHTML;
+        }
+        block7_change_btn.onclick = () => {
+        selected_block = block7;
+        text_area.value = block7.innerHTML;
+        }
+
+        save_change_btn.onclick = function () {
+        if(selected_block !== undefined) {
+        data = {html: ""};
+        switch(selected_block) {
+        case block1:
+        data.html = block1.innerHTML;
+        window.localStorage.setItem('block1_html', JSON.stringify(data));
+        break;
+        case block2:
+        data.html = block2.innerHTML;
+        window.localStorage.setItem('block2_html', JSON.stringify(data));
+        break;
+        case block3:
+        data.html = block3.innerHTML;
+        window.localStorage.setItem('block3_html', JSON.stringify(data));
+        break;
+        case block4:
+        data.html = block4.innerHTML;
+        window.localStorage.setItem('block4_html', JSON.stringify(data));
+        break;
+        case block5:
+        data.html = block5.innerHTML;
+        window.localStorage.setItem('block5_html', JSON.stringify(data));
+        break;
+        case block6:
+        data.html = block6.innerHTML;
+        window.localStorage.setItem('block6html', JSON.stringify(data));
+        break;
+        case block7:
+        data.html = block7.innerHTML;
+        window.localStorage.setItem('block7_html', JSON.stringify(data));
+        break;
+        }
+        selected_block.innerHTML = text_area.value;
+        selected_block.style.fontStyle = "italic";
+        switch(selected_block) {
+        case block1:
+        selected_block.appendChild(block1_back);
+        break;
+        case block2:
+        selected_block.appendChild(block2_back);
+        break;
+        case block3:
+        selected_block.appendChild(block3_back);
+        break;
+        case block4:
+        selected_block.appendChild(block4_back);
+        break;
+        case block5:
+        selected_block.appendChild(block5_back);
+        break;
+        case block6:
+        selected_block.appendChild(block6_back);
+        break;
+        case block7:
+        selected_block.appendChild(block7_back);
+        break;
+        }
+        }
+        }
+        }
+        declare();
+        // block buttons
+
+
+
+
+
+
+      </code>
+    </li>
+  </ol>
   </div>
   <div class="topic"><b>Висновок:</b>
-    <div class="topic-text">
-      Під час лабораторної роботи зверстав сайт відповідно до свого варіанту: підлаштував для окремих пристроїв. Права крайня колонка була зміщена у першу і в другий рядок, щоб було зручніше дивитися на карту. Скейлінг сторінки відбувається вдало, а ,отже, робота виконана правильно.
-    </div>
+    <div class="topic-text" style="font-size: 30px">
+      Під час лабораторної роботи ознайомився із скриптовою мовою програмування Javascript на прикладі
+      роботи із веб-сторінкою. Скриншоти до завдань та код наведені. Дані збережені в cookies та localstorage.
+      </div>
   </div>
 </div>
 
