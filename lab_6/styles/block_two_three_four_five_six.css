@@ -1,0 +1,15 @@
+
+
+.block_three_six {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.block_three {
+    background-color: #202020;
+}
+.block_six {
+    background-color: #202020;
+
+    height: 30px;
+}

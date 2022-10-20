@@ -1,0 +1,17 @@
+.block_two_three_four_five_six {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+.block_two_five, .block_four {
+    background-color: #252525;
+    width: 100px;
+}
+.block_two_five {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.block_two {
+    background-color: #191919;
+    height: 30px;
+}

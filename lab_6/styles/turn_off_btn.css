@@ -1,0 +1,37 @@
+.turn_off {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-align: center;
+    color: white;
+    height: 100%;
+    width: max-content;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+}
+.turn_off_text {
+    margin-top: 7px;
+}
+.arrow {
+    position: relative;
+    color: transparent;
+    z-index: 2;
+    clip-path: polygon(
+            0 20%,
+            60% 20%,
+            60% 0,
+            100% 50%,
+            60% 100%,
+            60% 80%,
+            0 80%);
+    width: 50px;
+    margin-top: 2px;
+    height: 26px;
+    background-color: aliceblue;
+}
+
+
