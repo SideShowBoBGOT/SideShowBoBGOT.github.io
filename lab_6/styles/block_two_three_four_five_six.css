@@ -1,15 +1,29 @@
-
+.block_two_three_four_five_six {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
 
 .block_three_six {
+    background-color: #141414;
     display: grid;
     grid-template-rows: 1fr auto;
 }
 
 .block_three {
-    background-color: #202020;
+    overflow-x: scroll;
+    max-width: 70vw;
+    max-height: 89vh;
+}
+.block_three::-webkit-scrollbar {
+    background-color: transparent;
+    height: 9px;
+}
+
+.block_three::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 3px;
 }
 .block_six {
-    background-color: #202020;
-
+    border-top: 3px solid aliceblue;
     height: 30px;
 }

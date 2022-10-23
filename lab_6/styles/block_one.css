@@ -1,0 +1,33 @@
+.block_one, .block_seven {
+    height: 30px;
+    display: flex;
+    background-color: #141414;
+}
+.block_one {
+    grid-row: 1;
+    border-bottom: 3px solid #cdd2d9;
+}
+
+.block_seven {
+    border-top: 3px solid #cdd2d9;
+    grid-row: 3;
+}
+.glitch_text {
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 4px;
+    text-align: center;
+    color: white;
+    height: max-content;
+    width: max-content;
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+.glitch_text.one, .glitch_text.two {
+    margin-right: 20px;
+    margin-left: auto;
+}
+

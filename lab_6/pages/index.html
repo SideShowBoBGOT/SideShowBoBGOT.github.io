@@ -3,50 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../styles/db_buttons.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/block_two_three_four_five_six.css">
     <link rel="stylesheet" href="../styles/glitch.css">
-    <link rel="stylesheet" href="../styles/block_one_seven.css">
     <link rel="stylesheet" href="../styles/turn_off_btn.css">
     <link rel="stylesheet" href="../styles/switch.css">
     <link rel="stylesheet" href="../styles/block_two_five.css">
+    <link rel="stylesheet" href="../styles/block_one.css">
+    <link rel="stylesheet" href="../styles/block_four.css">
+    <link rel="stylesheet" href="../styles/inputBox.css">
 </head>
 <body>
     <div class="main">
         <div class="block_one">
-            <div class="turn_off">
-                <div class="turn_off_text">TURN 0FF TH1$_ F#Ck1NG @NIM@TI0N</div>
-                <span class="arrow">s</span>
-                <label class="switch">
-                    <input type="checkbox" id="glitch_title_checkbox">
-                    <span class="slider">
-
-                    </span>
-                </label>
-            </div>
             <div class="glitch_text one" id="glitch_title">
-                <span aria-hidden="true" id="first_title_glitch">GL1TCH#EDIT@R_</span>
-                <span aria-hidden="true" id="second_title_glitch">GL1TCH#EDIT@R_</span>
                 GL1TCH#EDIT@R_
+
             </div>
         </div>
         <div class="block_two_three_four_five_six">
             <div class="block_two_five">
-                <div class="block_two"></div>
-                <div class="block_five"></div>
+                <div class="instruments">
+                    <div class="instruments_text_container">
+                        <div class="instruments_text">
+                            INSTRUMENTS
+                        </div>
+                    </div>
+                    <div class="instruments_menu">
+                        <div class="inputs">
+                            <div class="inputBox">
+                                <div class="input_placeholder">SIZE</div>
+                                <input id="glitch_size"  type="number" required="required"  min="1" max="100">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input_placeholder">WEIGHT</div>
+                                <input id="glitch_weight" type="number" required="required" min="1" max="2000">
+                            </div>
+                            <div class="inputBox">
+                                <div class="input_placeholder">COLOR</div>
+                                <input id="glitch_color" type="color" required="required" value="#FFFFFF">
+
+                            </div>
+                            <div class="inputBox">
+                                <div class="input_placeholder">Text</div>
+                                <input id="glitch_text" type="text" required="required">
+
+                            </div>
+                        </div>
+                        <div class="box_shadow_instrument">
+                            <div class="box_shadow_title">
+                                SHADOWS
+                            </div>
+                            <ul class="shadows_list">
+
+                            </ul>
+                            <div class="inputs">
+                                <div class="inputBox">
+                                    <div class="input_placeholder">SHADOW X</div>
+                                    <input id="shadow_x" step="0.01" type="number" required="required">
+                                </div>
+                                <div class="inputBox">
+                                    <div class="input_placeholder">SHADOW Y</div>
+                                    <input id="shadow_y" step="0.01" type="number" required="required">
+                                </div>
+                                <div class="inputBox">
+                                    <div class="input_placeholder">COLOR</div>
+                                    <input id="shadow_color" type="color" required="required" value="#FFFFFF">
+                                </div>
+                            </div>
+                            <div class="change_add_cancel">
+                                <label id="add_shadow" class="db_button confirm_button shadow_">
+                                    <span>ADD SHADOW</span>
+                                </label>
+                                <label id="play" class="db_button play_button shadow_">
+                                    <span>PLAY</span>
+                                </label>
+                                <label id="stop" class="db_button stop_button shadow_">
+                                    <span>STOP</span>
+                                </label>
+                                <label id="save" class="db_button save_button shadow_">
+                                    <span>SAVE</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
             <div class="block_three_six">
                 <div class="block_three">
                     <div class="glitch_content">
-                        <div class="glitch">
-                            GLITCH TEXT
+                        <div class="glitch" >
+<!--                            <span class="glitch_s">GLITCH TEXT</span>-->
+                            <span class="glitch_g g1">GLITCH TEXT</span>
+                            <span id="glitch" class="glitch_tt">GLITCH TEXT</span>
+                            <span class="glitch_g g2">GLITCH TEXT</span>
+                            <span class="glitch_g g3"></span>
+                            <span class="glitch_g g4"></span>
                         </div>
                     </div>
                 </div>
                 <div class="block_six"></div>
             </div>
 
-            <div class="block_four"></div>
+            <div class="block_four">
+                <div class="saved_glitches_title">
+                    <div>Saved Glitches</div>
+                </div>
+                <ul class="saved_glitches">
+
+
+                </ul>
+            </div>
 
         </div>
         <div class="block_seven">
@@ -56,5 +126,9 @@
         </div>
     </div>
 </body>
-<script src="../scripts/slider.js"></script>
+<script src="../scripts/glitch.js"></script>
+<script src="../scripts/shadow_texts.js"></script>
+<script src="../scripts/animate_glitch.js"></script>
+<script src="../scripts/async_read_write.js"></script>
+<script src="../scripts/test.js"></script>
 </html>

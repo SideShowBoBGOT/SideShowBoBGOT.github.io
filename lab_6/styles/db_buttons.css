@@ -1,0 +1,85 @@
+.db_button {
+    height: min-content;
+    position: relative;
+    padding: 4px 9px 4px 8px;
+    width: max-content;
+    background-color: #1e0b30;
+    border-radius: 5px;
+    border-left: 3px solid #cecece;
+    border-top: 3px solid #cecece;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.db_button:hover {
+    color: white;
+    border-left: 3px solid aliceblue;
+    border-top: 3px solid aliceblue;
+}
+
+.db_button label {
+    position: absolute;
+    left: 1px;
+}
+.db_button.load_button {
+    box-shadow: 4px 4px #0101b0;
+}
+.db_button.load_button:hover {
+    box-shadow: 4px 4px blue;
+}
+.db_button.change_button {
+    box-shadow: 4px 4px #969615;
+}
+.db_button.change_button:hover {
+    box-shadow: 4px 4px #d3d343;
+}
+
+.db_button.add_button {
+    box-shadow: 4px 4px green;
+}
+.db_button.add_button:hover {
+    box-shadow: 4px 4px #1ec51e;
+}
+
+.db_button.confirm_button {
+    box-shadow: 4px 4px dimgrey;
+}
+.db_button.confirm_button:hover {
+    box-shadow: 4px 4px grey;
+}
+
+.db_button.cancel_button {
+    box-shadow: 4px 4px #b05f00;
+}
+.db_button.cancel_button:hover {
+    box-shadow: 4px 4px orange;
+}
+
+.db_button.delete_button {
+    box-shadow: 4px 4px darkred;
+}
+
+.db_button.delete_button:hover {
+    box-shadow: 4px 4px red;
+}
+
+.db_button.save_button {
+    box-shadow: 4px 4px #0101b0;
+}
+.db_button.save_button:hover {
+    box-shadow: 4px 4px blue;
+}
+
+.db_button.play_button {
+    box-shadow: 4px 4px green;
+}
+.db_button.play_button:hover {
+    box-shadow: 4px 4px #1ec51e;
+}
+.db_button.stop_button {
+    box-shadow: 4px 4px darkred;
+}
+
+.db_button.stop_button:hover {
+    box-shadow: 4px 4px red;
+}

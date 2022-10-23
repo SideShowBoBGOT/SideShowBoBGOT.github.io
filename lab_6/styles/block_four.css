@@ -1,0 +1,82 @@
+.block_four {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    background-color: #141414;
+    border-left: 3px solid aliceblue;
+}
+.saved_glitches_title {
+    display: flex;
+    grid-template-rows: 1fr;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 4px;
+    color: white;
+    height: max-content;
+    text-transform: uppercase;
+    border-bottom: 3px solid aliceblue;
+}
+.saved_glitches_title div {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.saved_glitches {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    overflow-y: scroll;
+    height: 100%;
+    max-height: calc(100vh - 108px);
+}
+.saved_glitches::-webkit-scrollbar {
+    width: 15px;
+    height: 10px;
+    border-left: 3px solid aliceblue;
+}
+.saved_glitches::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+.saved_glitch {
+    display: flex;
+    gap: 0.9rem;
+    padding-bottom: 4px;
+}
+.glitch_container {
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 13px;
+    margin-top: 7px;
+}
+.glitch_data {
+    font-weight: 600;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.glitch_data::-webkit-scrollbar {
+   height: 9px;
+}
+.glitch_data::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+.db_buttons {
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 4px;
+    color: #cecece;
+    margin-right: 10px;
+    margin-left: auto;
+    display: flex;
+    gap: 0.6rem;
+}

@@ -1,17 +1,184 @@
-.block_two_three_four_five_six {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-}
-.block_two_five, .block_four {
-    background-color: #252525;
-    width: 100px;
-}
 .block_two_five {
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: #141414;
+    width: 400px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    border-right: 3px solid aliceblue;
+}
+.block_two {
+    display: flex;
+    font-size: 1.25rem;
+    background-color: #141414;
+    border-bottom: 3px solid aliceblue;
+}
+.block_five {
     display: grid;
     grid-template-rows: auto 1fr;
 }
-
-.block_two {
-    background-color: #191919;
-    height: 30px;
+.menu_text {
+    margin-left: auto;
+    margin-right: auto;
 }
+.animation_nodes {
+    overflow-y: scroll;
+    min-height: 0px;
+    max-height: 15vh;
+    padding: 0;
+    margin: 0;
+    padding-top: 7px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    border-bottom: 3px solid aliceblue;
+    padding-bottom: 10px;
+}
+
+.animation_nodes::-webkit-scrollbar {
+    width: 15px;
+    border-left: 3px solid aliceblue;
+}
+.animation_nodes::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+
+.animation_node {
+    display: flex;
+}
+.animation_node_db_buttons {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    gap: 0.5rem;
+}
+.animation_node_info {
+    margin-left: 10px;
+    margin-right: 5px;
+    display: flex;
+    margin-top: 3px;
+    gap: 10px;
+}
+.animation_node_name {
+    width: 100px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.animation_node_name::-webkit-scrollbar {
+    background-color: transparent;
+    height: 9px;
+}
+.animation_node_name::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+.instruments {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.instruments_text_container {
+    display: flex;
+    border-bottom: 3px solid aliceblue;
+}
+.instruments_text {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.instruments_menu {
+    padding: 0;
+    margin: 0;
+}
+
+.inputs {
+    padding-left: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.inputBox {
+    position: relative;
+}
+.inputBox input {
+    color: aliceblue;
+    width: calc(100% - 20px);
+    padding: 2px;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1em;
+}
+
+.box_shadow_instrument {
+    border-top: 3px solid aliceblue;
+    border-bottom: 3px solid aliceblue;
+    padding-bottom: 15px;
+}
+.box_shadow_title {
+    margin-top: 10px;
+    padding-left: 10px;
+    border-bottom: 3px dashed aliceblue;
+
+}
+.shadows_list {
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    max-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 0.7rem;
+    border-bottom: 3px dashed aliceblue;
+}
+
+.shadows_list::-webkit-scrollbar {
+    width: 15px;
+    border-left: 3px dashed aliceblue;
+}
+.shadows_list::-webkit-scrollbar-thumb {
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+
+.shadow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+.shadow_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.shadow_buttons {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: auto;
+    margin-right: 10px;
+}
+.change_add_cancel {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.other_inputs {
+    display: flex;
+}
+
+
+
+
+
+
