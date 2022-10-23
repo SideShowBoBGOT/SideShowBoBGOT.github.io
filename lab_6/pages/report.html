@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../report.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Лабораторна 5</title>
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <h1>Лабораторна 6</h1>
+        <h2>Панченко Сергій ІП-11</h2>
+        <h2>7 Варіант</h2>
+    </div>
+    <div class="topic"><h2><b>Мета:</b></h2>
+        <div class="topic-text">
+            <h2>Організація бекенда і фронтенда за допомогою Javascript та супутніх технологій.</h2>
+
+        </div>
+    </div>
+    <div class="content" style="font-size: 25px">
+        <img src="../images/sfsdf.png" alt="">
+        <div style="font-size: 35px">
+            <ul>
+                <li>
+                    Сторінка має відповідні поля для редагування тексту та додавання будь-якої кількості тіней
+                </li>
+                <li>
+                    Для того, щоб почалася анімація "багів", то натисніть PLAY
+                </li>
+                <li>
+                    Для того, щоб почалася зберегти слово асинхронно, то натисніть SAVE
+                </li>
+                <li>
+                    Для того, щоб завантажити слово, то натисніть LOAD
+                </li>
+                <li>
+                    Для того, щоб видалити слово, то натисніть DELETE
+                </li>
+            </ul>
+        </div>
+        <ol class="exercises" style="font-size: 30px">
+            <li>
+                Асинхронні функції для збереження баганутих слів в IndexedDB, реалізовані за допомогою Promises:
+                <code class="code">
+                    <div style="font-weight: bold; font-size: 25px">Код</div>
+                    function loadFromIndexedDB(storeName, id){
+                    return new Promise(
+                    function(resolve, reject) {
+                    var dbRequest = indexedDB.open(storeName);
+
+                    dbRequest.onerror = function(event) {
+                    reject(Error("Error text"));
+                    };
+
+                    dbRequest.onupgradeneeded = function(event) {
+                    // Objectstore does not exist. Nothing to load
+                    event.target.transaction.abort();
+                    reject(Error('Not found'));
+                    };
+
+                    dbRequest.onsuccess = function(event) {
+                    var database      = event.target.result;
+                    var transaction   = database.transaction([storeName]);
+                    var objectStore   = transaction.objectStore(storeName);
+                    var objectRequest = objectStore.get(id);
+
+                    objectRequest.onerror = function(event) {
+                    reject(Error('Error text'));
+                    };
+
+                    objectRequest.onsuccess = function(event) {
+                    if (objectRequest.result) resolve(objectRequest.result);
+                    else reject(Error('object not found'));
+                    };
+                    };
+                    }
+                    );
+                    }
+
+                    function deleteFromIndexedDB(storeName, id){
+                    return new Promise(
+                    function(resolve, reject) {
+                    var dbRequest = indexedDB.open(storeName);
+
+                    dbRequest.onerror = function(event) {
+                    reject(Error("IndexedDB database error"));
+                    };
+
+                    dbRequest.onupgradeneeded = function(event) {
+                    var database    = event.target.result;
+                    var objectStore = database.createObjectStore(storeName, {keyPath: "id"});
+                    };
+
+                    dbRequest.onsuccess = function(event) {
+                    var database      = event.target.result;
+                    var transaction   = database.transaction([storeName], 'readwrite');
+                    var objectStore   = transaction.objectStore(storeName);
+                    var objectRequest = objectStore.delete(id); // Overwrite if exists
+
+                    objectRequest.onerror = function(event) {
+                    reject(Error('Error text'));
+                    };
+
+                    objectRequest.onsuccess = function(event) {
+                    resolve('Data saved OK');
+                    };
+                    };
+                    }
+                    );
+                    }
+
+                    function loadAllFromIndexedDB(storeName) {
+                    return new Promise(
+                    function(resolve, reject) {
+                    var dbRequest = indexedDB.open(storeName);
+
+                    dbRequest.onerror = function(event) {
+                    reject(Error("Error text"));
+                    };
+
+                    dbRequest.onupgradeneeded = function(event) {
+                    // Objectstore does not exist. Nothing to load
+                    event.target.transaction.abort();
+                    reject(Error('Not found'));
+                    };
+
+                    dbRequest.onsuccess = function(event) {
+                    var database      = event.target.result;
+                    var transaction   = database.transaction([storeName]);
+                    var objectStore   = transaction.objectStore(storeName);
+                    var objectRequest = objectStore.getAll();
+
+                    objectRequest.onerror = function(event) {
+                    reject(Error('Error text'));
+                    };
+
+                    objectRequest.onsuccess = function(event) {
+                    if (objectRequest.result) resolve(objectRequest.result);
+                    else reject(Error('object not found'));
+                    };
+                    };
+                    }
+                    );
+                    }
+
+                    function saveToIndexedDB(storeName, object){
+                    return new Promise(
+                    function(resolve, reject) {
+                    if (object.id === undefined) reject(Error('object has no id.'));
+                    var dbRequest = indexedDB.open(storeName);
+
+                    dbRequest.onerror = function(event) {
+                    reject(Error("IndexedDB database error"));
+                    };
+
+                    dbRequest.onupgradeneeded = function(event) {
+                    var database    = event.target.result;
+                    var objectStore = database.createObjectStore(storeName, {keyPath: "id"});
+                    };
+
+                    dbRequest.onsuccess = function(event) {
+                    var database      = event.target.result;
+                    var transaction   = database.transaction([storeName], 'readwrite');
+                    var objectStore   = transaction.objectStore(storeName);
+                    var objectRequest = objectStore.put(object); // Overwrite if exists
+
+                    objectRequest.onerror = function(event) {
+                    reject(Error('Error text'));
+                    };
+
+                    objectRequest.onsuccess = function(event) {
+                    resolve('Data saved OK');
+                    };
+                    };
+                    }
+                    );
+                    }
+                </code>
+
+            </li>
+            
+        </ol>
+    </div>
+    <div class="topic" style="font-size: 35px"><b>Висновок:</b>
+        <div class="topic-text" style="font-size: 30px">
+            Під час лабораторної роботио організував бекенд і фронтенд за допомогою Javascript. Асинхронні функції, які звертаються до IndexedDB написані з використанням Promises. Користувач здатний змінювати вид слів, тобто розмір, колір, вагу, тіні. Анімації реалізовані з використанням CSS.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
